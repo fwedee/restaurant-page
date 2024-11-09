@@ -1,6 +1,5 @@
-const content = document.querySelector("#content");
-
 export function displayHomePage() {
+  const content = document.querySelector("#content");
   // Create header
   const header = document.createElement("h1");
   header.innerText = "Pasta Paradise";
