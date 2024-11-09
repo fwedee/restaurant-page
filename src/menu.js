@@ -112,21 +112,46 @@ export function displayMenuPage() {
   function generateMenu() {
     const contentDiv = document.getElementById("content");
 
-    let menuHTML = "<h1>Pasta Paradise Menu</h1>";
+    const title = document.createElement("h1");
+    title.textContent = "Pasta Paradise Menu";
+    contentDiv.appendChild(title);
 
     function generateSection(title, items) {
-      menuHTML += `<h2>${title}</h2>`;
-      menuHTML += "<ul>";
+      const sectionTitle = document.createElement("h2");
+      sectionTitle.textContent = title;
+      contentDiv.appendChild(sectionTitle);
+
+      // Create and append items list
+      const itemsList = document.createElement("ul");
+
       items.forEach((item) => {
-        menuHTML += `
-          <li>
-            <strong>${item.name}</strong><br>
-            <em>${item.description}</em><br>
-            <span class="price">${item.price}</span>
-          </li>
-        `;
+        const listItem = document.createElement("li");
+
+        // Add item name
+        const nameElement = document.createElement("strong");
+        nameElement.textContent = item.name;
+        listItem.appendChild(nameElement);
+
+        // Add line break
+        listItem.appendChild(document.createElement("br"));
+
+        // Add description
+        const descElement = document.createElement("em");
+        descElement.textContent = item.description;
+        listItem.appendChild(descElement);
+
+        // Add line break
+        listItem.appendChild(document.createElement("br"));
+
+        // Add price
+        const priceSpan = document.createElement("span");
+        priceSpan.className = "price";
+        priceSpan.textContent = item.price;
+        listItem.appendChild(priceSpan);
+
+        itemsList.appendChild(listItem);
       });
-      menuHTML += "</ul>";
+      contentDiv.appendChild(itemsList);
     }
 
     // Generate all menu sections
@@ -135,8 +160,6 @@ export function displayMenuPage() {
     generateSection("Main Dishes", menu.mainDishes);
     generateSection("Desserts", menu.desserts);
     generateSection("Kids' Menu", menu.kidsMenu);
-
-    contentDiv.innerHTML = menuHTML;
   }
 
   generateMenu();

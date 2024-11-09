@@ -2,6 +2,10 @@ import { displayHomePage } from "./homepage";
 import { displayAboutPage } from "./about";
 import { displayMenuPage } from "./menu";
 
+import styles from "./styles.css";
+
+console.log(styles);
+
 const homepageButton = document.getElementById("homeButton");
 homepageButton.addEventListener("click", () => {
   clearContent();
@@ -13,7 +17,7 @@ const menuButton = document.getElementById("menuButton");
 menuButton.addEventListener("click", () => {
   clearContent();
   displayMenuPage();
-  updateSortButtons("homeButton");
+  updateSortButtons("menuButton");
 });
 const aboutButton = document.getElementById("aboutButton");
 aboutButton.addEventListener("click", () => {
@@ -28,7 +32,7 @@ function clearContent() {
 }
 
 function updateSortButtons(activeButtonId) {
-  const buttons = ["homeButton", "aboutButton", "menueButton"];
+  const buttons = ["homeButton", "aboutButton", "menuButton"];
 
   buttons.forEach((buttonId) => {
     const button = document.getElementById(buttonId);
@@ -44,3 +48,4 @@ function updateSortButtons(activeButtonId) {
 }
 
 displayHomePage();
+updateSortButtons("homeButton");

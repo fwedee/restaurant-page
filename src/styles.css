@@ -1,0 +1,222 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f7f3eb;
+  line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #8b0000;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+nav button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav button.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
+
+/* Main Content */
+#content {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #8b0000;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Georgia", serif;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #8b0000;
+  margin: 2rem 0 1rem;
+  font-family: "Georgia", serif;
+}
+
+.description {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.description p:first-of-type {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.description p:last-of-type {
+  font-style: italic;
+  text-align: right;
+  color: #666;
+}
+
+.hours,
+.location {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.hours p,
+.location p {
+  margin: 0.5rem 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  background-color: #ffffff;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+li strong {
+  font-size: 1.3rem;
+  color: #2c1810;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+li em {
+  display: block;
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.price {
+  display: inline-block;
+  background-color: #8b0000;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* Section-specific styles */
+#content h2:first-of-type {
+  margin-top: 0;
+}
+
+/* Kids' Menu specific styles */
+h2:last-of-type + ul li {
+  background-color: #fff9f9;
+  border: 2px dashed #8b0000;
+}
+
+#content > p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #555;
+}
+
+/* Staff Contact Section */
+.staff-contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.staff-member {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.staff-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.staff-member h4 {
+  font-size: 1.5rem;
+  color: #2c1810;
+  margin-bottom: 0.5rem;
+  font-family: "Georgia", serif;
+}
+
+.staff-member h4 em {
+  display: block;
+  font-size: 1rem;
+  color: #8b0000;
+  margin-top: 0.3rem;
+  font-weight: normal;
+}
+
+.staff-member p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.staff-member strong {
+  color: #555;
+}
+
+.staff-member a {
+  color: #8b0000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.staff-member a:hover {
+  color: #5a0000;
+  text-decoration: underline;
+}

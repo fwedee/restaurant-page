@@ -32,6 +32,12 @@ export function displayAboutPage() {
       phone: "555-555-5556",
       email: "bowser@notFake.com",
     },
+    {
+      name: "Peach",
+      role: "Waiter",
+      phone: "555-555-5557",
+      email: "peach@notFake.com",
+    },
   ];
 
   staffData.forEach((staff) => {
@@ -39,15 +45,30 @@ export function displayAboutPage() {
     staffMemberDiv.classList.add("staff-member");
 
     const staffName = document.createElement("h4");
-    staffName.innerHTML = `${staff.name} <em>${staff.role}</em>`;
+    staffName.textContent = staff.name;
+    const roleEm = document.createElement("em");
+    roleEm.textContent = staff.role;
+    staffName.appendChild(roleEm);
     staffMemberDiv.appendChild(staffName);
 
     const phonePara = document.createElement("p");
-    phonePara.innerHTML = `<strong>Phone:</strong> ${staff.phone}`;
+    const phoneStrong = document.createElement("strong");
+    phoneStrong.textContent = "Phone:";
+    phonePara.appendChild(phoneStrong);
+    phonePara.appendChild(document.createTextNode(` ${staff.phone}`));
     staffMemberDiv.appendChild(phonePara);
 
     const emailPara = document.createElement("p");
-    emailPara.innerHTML = `<strong>Email:</strong> <a href="mailto:${staff.email}">${staff.email}</a>`;
+    const emailStrong = document.createElement("strong");
+    emailStrong.textContent = "Email:";
+    emailPara.appendChild(emailStrong);
+    emailPara.appendChild(document.createTextNode(" "));
+
+    const emailLink = document.createElement("a");
+    emailLink.href = `mailto:${staff.email}`;
+    emailLink.textContent = staff.email;
+    emailPara.appendChild(emailLink);
+
     staffMemberDiv.appendChild(emailPara);
 
     staffContactContainer.appendChild(staffMemberDiv);
